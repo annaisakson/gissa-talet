@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightsalmon;
+}
+
+/* kort med spelet */
+#card {
+    min-height: 40vh;
+    min-width: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+    background-color: rgb(255, 177, 146);
+    box-shadow: 3px 3px rgb(233, 101, 101);
+}
+
+/* gissa talet-text */
+h1 {
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    letter-spacing: 0.1em;
+    text-shadow: 3px 3px rgb(233, 101, 101);
+}
+
+/* skriv in ett tal mellan 1-100 */
+h2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(233, 101, 101);
+}
+
+/* input-fältet */
+input {
+    border: none;
+    border-radius: 10px;
+    height: 3em;
+    width: 5em;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* gissa-knapp */
+#guess-btn {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    padding: 0.5em 1.5em;
+    background-color: lightsalmon;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgb(233, 101, 101);
+}
+
+#guess-btn {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(233, 101, 101);
+}
+
+/* knapp för att börja om spelet */
+#reset {
+    color: rgb(233, 101, 101);;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    padding: 0.5em 1.5em;
+    background-color: lightsalmon;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgb(233, 101, 101)
+}
+
+/* om man förlorar */
+.game-over {
+    color: red;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    animation-name: over;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+/* om man vinner */
+.win {
+    color: white;
+    text-shadow: 3px 3px rgb(233, 101, 101);
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: transform 2s ease-in 0s;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* animationer för vinst/förlust */
+@keyframes move {
+    0% {
+        transform: translateX(0px); 
+    }
+    50% {
+        transform: translatey(30px);
+    }
+
+    100% {
+        transform: translatey(00px); 
+    }
+}
+
+@keyframes over {
+    0% {
+        font-size: 2rem; 
+    }
+    100% {
+        font-size: 3rem;
+    }
+}
+
